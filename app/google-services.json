@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "629542147395",
+    "firebase_url": "https://hwmanager-bf2ae.firebaseio.com",
+    "project_id": "hwmanager-bf2ae",
+    "storage_bucket": "hwmanager-bf2ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629542147395:android:146ac2d3f068f7a8828bf6",
+        "android_client_info": {
+          "package_name": "com.example.hwmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629542147395-l0i01r3l4jgj6blio7unehhknn0iuern.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsiNKitTEvsYOfucS3fVFH0XvqJjScmEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629542147395-l0i01r3l4jgj6blio7unehhknn0iuern.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
