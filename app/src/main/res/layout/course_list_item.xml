@@ -3,18 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-
-    <LinearLayout
-        android:id="@+id/CLI_colorStrip"
-        android:layout_width="8dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/design_default_color_primary_variant"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/CLI_subscribeCheckBox"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/CLI_subscribeCheckBox"
@@ -25,6 +15,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/CLI_colorStrip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/CLI_colorStrip" />
+
+    <LinearLayout
+        android:id="@+id/CLI_colorStrip"
+        android:layout_width="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/design_default_color_primary_variant"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/CLI_subscribeCheckBox"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/CLI_courseText"
