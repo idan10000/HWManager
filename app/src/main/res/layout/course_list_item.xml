@@ -10,36 +10,34 @@
         android:id="@+id/CLI_colorStrip"
         android:layout_width="8dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/design_default_color_primary_variant"
         android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/CLI_subscribeCheckBox"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <CheckBox
+        android:id="@+id/CLI_subscribeCheckBox"
+        style="@style/Widget.MaterialComponents.CompoundButton.CheckBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CLI_colorStrip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CLI_colorStrip" />
+
     <TextView
-        android:id="@+id/ELI_taskText"
+        android:id="@+id/CLI_courseText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center|left"
+        android:layout_marginStart="8dp"
+        android:gravity="left|center_vertical"
         android:text="Calculus"
         android:textIsSelectable="false"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/CLI_colorStrip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/CLI_colorStrip"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/CLI_subscribeCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/CLI_colorStrip"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/CLI_colorStrip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

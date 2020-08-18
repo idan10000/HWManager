@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.hwmanager.fragments.AllCoursesFragment;
+import com.example.hwmanager.fragments.HomeFragment;
+import com.example.hwmanager.fragments.MyCoursesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
