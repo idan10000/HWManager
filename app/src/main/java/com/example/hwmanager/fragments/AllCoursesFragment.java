@@ -19,6 +19,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.util.Objects;
+
 public class AllCoursesFragment extends Fragment {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -26,7 +28,6 @@ public class AllCoursesFragment extends Fragment {
 
 
     private FloatingActionButton addCourseBT;
-    private RecyclerView recyclerView;
     private CourseListRecyclerAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class AllCoursesFragment extends Fragment {
 
         FirestoreRecyclerOptions<CourseListItem> options = new FirestoreRecyclerOptions.Builder<CourseListItem>().setQuery(query, CourseListItem.class).build();
         adapter = new CourseListRecyclerAdapter(options);
-        recyclerView = getActivity().findViewById(R.id.mainRecyclerList);
+        RecyclerView recyclerView = Objects.requireNonNull(getActivity()).findViewById(R.id.mainRecyclerList);
         recyclerView.setAdapter(adapter);
         }
 
