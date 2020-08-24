@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -13,9 +14,10 @@ import com.example.hwmanager.fragments.AllCoursesFragment;
 import com.example.hwmanager.fragments.HomeFragment;
 import com.example.hwmanager.fragments.MyCoursesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
-    
+    private SharedPreferences preferences = getPreferences(MODE_PRIVATE);
     private BottomNavigationView m_botNav;
     private RecyclerView m_recycler;
     private static final String TAG = "MainActivity";
@@ -23,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(firstOpen()){
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            
+        }
 
         m_botNav = findViewById(R.id.bottom_navigation);
         m_botNav.setOnNavigationItemSelectedListener(m_itemSelectedListener);
@@ -59,4 +66,16 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    private boolean firstOpen(){
+        boolean ranBefore = preferences.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.commit();
+        }
+        return !ranBefore;
+
+    }
 }
