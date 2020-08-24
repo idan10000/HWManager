@@ -14,22 +14,20 @@ import com.example.hwmanager.fragments.AllCoursesFragment;
 import com.example.hwmanager.fragments.HomeFragment;
 import com.example.hwmanager.fragments.MyCoursesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
+    private String id;
     private SharedPreferences preferences = getPreferences(MODE_PRIVATE);
     private BottomNavigationView m_botNav;
     private RecyclerView m_recycler;
     private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(firstOpen()){
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            
-        }
+        firstOpen();
 
         m_botNav = findViewById(R.id.bottom_navigation);
         m_botNav.setOnNavigationItemSelectedListener(m_itemSelectedListener);
@@ -62,20 +60,34 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new MyCoursesFragment();
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHolder,selectedFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHolder, selectedFragment).commit();
             return true;
         }
     };
 
-    private boolean firstOpen(){
+    private boolean firstOpen() {
         boolean ranBefore = preferences.getBoolean("RanBefore", false);
         if (!ranBefore) {
             // first time
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("RanBefore", true);
+            String id = generateUniqueID();
+            this.id = id;
+            editor.putString("id",id);
             editor.commit();
         }
         return !ranBefore;
 
     }
+
+    private String generateUniqueID() {
+        String chars =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder autoId = new StringBuilder();
+        for (int i = 0; i < 20; i++) {
+            autoId.append(chars.charAt((int) Math.floor(Math.random() * chars.length())));
+        }
+        return autoId.toString();
+    }
+
 }
