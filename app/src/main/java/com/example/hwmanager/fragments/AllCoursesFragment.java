@@ -32,7 +32,7 @@ public class AllCoursesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragView = inflater.inflate(R.layout.fragment_all_courses,container,false);
-        addCourseBT = fragView.findViewById(R.id.AC_addButton);
+        addCourseBT = fragView.findViewById(R.id.M_addButton);
         initRecycler();
         return fragView;
 
