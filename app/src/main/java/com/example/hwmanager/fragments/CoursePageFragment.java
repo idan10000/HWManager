@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Query;
 
 import java.util.Objects;
 
-public class CoursePage extends Fragment {
+public class CoursePageFragment extends Fragment {
 
     private EventListRecyclerAdapter adapter;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();

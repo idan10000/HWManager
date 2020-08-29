@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.menu_my_courses:
                     selectedFragment = new MyCoursesFragment();
                     break;
+                default:
+                    selectedFragment = new HomeFragment();
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHolder, selectedFragment).commit();
             return true;
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("RanBefore", true);
             String id = generateUniqueID();
             this.id = id;
-            editor.putString("id",id);
+            editor.putString("id", id);
             editor.commit();
         }
         return !ranBefore;

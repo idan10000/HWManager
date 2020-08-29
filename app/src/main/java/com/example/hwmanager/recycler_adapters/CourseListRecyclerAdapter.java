@@ -1,5 +1,6 @@
 package com.example.hwmanager.recycler_adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,23 +9,27 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hwmanager.R;
+import com.example.hwmanager.fragments.CoursePageFragment;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class CourseListRecyclerAdapter extends FirestoreRecyclerAdapter<CourseListItem, CourseListRecyclerAdapter.ViewHolder> {
 
 
+    private Context context;
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public CourseListRecyclerAdapter(@NonNull FirestoreRecyclerOptions<CourseListItem> options) {
+    public CourseListRecyclerAdapter(@NonNull FirestoreRecyclerOptions<CourseListItem> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     @Override
@@ -32,12 +37,21 @@ public class CourseListRecyclerAdapter extends FirestoreRecyclerAdapter<CourseLi
         holder.colorStrip.setBackgroundColor(model.getStripColor());
         holder.courseName.setText(model.getCourseName());
         holder.checkBox.setSelected(false); // TODO: add state from local file
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                (((FragmentActivity) context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentHolder, new CoursePageFragment())).commit();
+            }
+        });
+
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.course_list_item, parent, false);
         return new ViewHolder(view);
     }
 
