@@ -27,12 +27,10 @@ public class AllCoursesFragment extends Fragment {
     private CollectionReference courseRef = db.collection("Courses");
 
 
-    private FloatingActionButton addCourseBT;
     private CourseListRecyclerAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragView = inflater.inflate(R.layout.fragment_all_courses,container,false);
-        addCourseBT = fragView.findViewById(R.id.M_addButton);
         initRecycler();
         return fragView;
 
@@ -62,6 +60,5 @@ public class AllCoursesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        addCourseBT = view.findViewById(R.id.AC_addButton);
     }
 }
