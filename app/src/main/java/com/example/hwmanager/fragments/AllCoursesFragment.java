@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hwmanager.R;
-import com.example.hwmanager.recycler_adapters.CourseListItem;
+import com.example.hwmanager.support_classes.CourseListItem;
 import com.example.hwmanager.recycler_adapters.CourseListRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,7 +42,7 @@ public class AllCoursesFragment extends Fragment {
         Query query = courseRef.orderBy("courseName",Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<CourseListItem> options = new FirestoreRecyclerOptions.Builder<CourseListItem>().setQuery(query, CourseListItem.class).build();
-        adapter = new CourseListRecyclerAdapter(options);
+        adapter = new CourseListRecyclerAdapter(options,getActivity());
         RecyclerView recyclerView = Objects.requireNonNull(getActivity()).findViewById(R.id.mainRecyclerList);
         recyclerView.setAdapter(adapter);
         }

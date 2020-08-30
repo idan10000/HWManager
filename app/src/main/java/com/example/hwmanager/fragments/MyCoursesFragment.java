@@ -12,9 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hwmanager.R;
-import com.example.hwmanager.recycler_adapters.CourseListItem;
-import com.example.hwmanager.recycler_adapters.CourseListRecyclerAdapter;
-import com.example.hwmanager.recycler_adapters.EventListItem;
+import com.example.hwmanager.support_classes.EventListItem;
 import com.example.hwmanager.recycler_adapters.EventListRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;

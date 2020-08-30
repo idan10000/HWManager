@@ -1,18 +1,18 @@
-package com.example.hwmanager.recycler_adapters;
+package com.example.hwmanager.support_classes;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class EventListItem {
 
-    private String day, text, time;
+    private String day, text;
     private int eventColor;
     private Calendar date;
+    private Time time;
 
     public EventListItem() {
     }
 
-    public EventListItem(Calendar date, String day, String text, String time, int eventColor) {
+    public EventListItem(Calendar date, String day, String text, Time time, int eventColor) {
         this.date = date;
         this.day = day;
         this.text = text;
@@ -32,7 +32,7 @@ public class EventListItem {
         return text;
     }
 
-    public String getTime() {
+    public Time getTime() {
         return time;
     }
 

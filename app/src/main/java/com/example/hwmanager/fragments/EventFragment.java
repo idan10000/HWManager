@@ -9,12 +9,11 @@ import android.widget.TimePicker;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.hwmanager.recycler_adapters.EventListItem;
+import com.example.hwmanager.support_classes.EventListItem;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Arrays;
 import java.util.Calendar;
 
 public class EventFragment extends Fragment {

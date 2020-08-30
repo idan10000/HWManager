@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hwmanager.R;
 import com.example.hwmanager.fragments.CoursePageFragment;
+import com.example.hwmanager.support_classes.CourseListItem;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 

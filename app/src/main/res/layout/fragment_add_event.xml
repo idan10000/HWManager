@@ -5,82 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/FAE_saveBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/FAE_timeET"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/FAE_timeET"
+        app:layout_constraintTop_toBottomOf="@+id/FAE_timeET" />
+
+    <EditText
+        android:id="@+id/FAE_dateET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/FAE_timeET"
+        app:layout_constraintEnd_toEndOf="@+id/FAE_courseTAC"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/FAE_courseTAC"
+        app:layout_constraintTop_toBottomOf="@+id/FAE_courseTAC" />
+
+    <EditText
+        android:id="@+id/FAE_timeET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Time"
+        android:inputType="time"
+        app:layout_constraintBottom_toTopOf="@+id/FAE_saveBT"
+        app:layout_constraintEnd_toEndOf="@+id/FAE_dateET"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/FAE_dateET"
+        app:layout_constraintTop_toBottomOf="@+id/FAE_dateET" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Submission - Text"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/FAE_courseTAC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FAE_title"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/FAE_courseTAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Course"
+        android:inputType="textAutoComplete"
+        app:layout_constraintBottom_toTopOf="@+id/FAE_dateET"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/FAE_title"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon.CenterStacked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/cardview_dark_background"
+        android:text="@string/FAE_title"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="70dp" />
-
-    <TextView
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon.CenterStacked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:outlineAmbientShadowColor="@color/cardview_dark_background"
-        android:text="Add Course"
-        android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="33dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="122dp" />
-
-    <EditText
-        android:id="@+id/editTextCourseName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:ems="10"
-        android:hint="Course Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <EditText
-        android:id="@+id/editTextSubmissionDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="submission date"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCourseName" />
-    <EditText
-        android:id="@+id/editTextSubmissionTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="submission time"
-        android:inputType="time"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSubmissionDate" />
-
-    <FrameLayout
-        android:layout_width="208dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="48dp"
-        android:background="#673AB7"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSubmissionTime">
-
-        <TextView
-            android:layout_marginTop="3dp"
-            android:layout_marginStart="53dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pick color"
-            android:textColor="@color/design_default_color_on_primary"
-            android:textSize="17dp" />
-
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

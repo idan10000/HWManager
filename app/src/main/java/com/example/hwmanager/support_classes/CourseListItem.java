@@ -1,4 +1,4 @@
-package com.example.hwmanager.recycler_adapters;
+package com.example.hwmanager.support_classes;
 
 import android.widget.CheckBox;
 import android.widget.LinearLayout;

@@ -10,8 +10,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hwmanager.R;
+import com.example.hwmanager.support_classes.EventListItem;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+
+import java.util.Calendar;
 
 public class EventListRecyclerAdapter extends FirestoreRecyclerAdapter<EventListItem, EventListRecyclerAdapter.EventListViewHolder> {
 
@@ -29,8 +32,8 @@ public class EventListRecyclerAdapter extends FirestoreRecyclerAdapter<EventList
     protected void onBindViewHolder(@NonNull EventListViewHolder holder, int position, @NonNull EventListItem model) {
         holder.eventText.setText(model.getText());
         holder.eventDay.setText(model.getDay());
-        holder.eventDate.setText(model.getDate());
-        holder.eventTime.setText(model.getTime());
+        holder.eventDate.setText(model.getDate().get(Calendar.MONTH) + "." + model.getDate().get(Calendar.DAY_OF_MONTH));
+        holder.eventTime.setText(model.getTime().toString());
         holder.eventBackColor.setBackgroundColor(model.getEventColor());
     }
 
