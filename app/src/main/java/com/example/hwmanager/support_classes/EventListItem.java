@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class EventListItem {
 
-    private String day, text;
+    private String day, text, course;
     private int eventColor;
     private Calendar date;
     private Time time;
@@ -12,12 +12,13 @@ public class EventListItem {
     public EventListItem() {
     }
 
-    public EventListItem(Calendar date, String day, String text, Time time, int eventColor) {
+    public EventListItem(Calendar date, String day, String text, Time time, int eventColor, String course) {
         this.date = date;
         this.day = day;
         this.text = text;
         this.time = time;
         this.eventColor = eventColor;
+        this.course = course;
     }
 
     public Calendar getDate() {
@@ -38,5 +39,9 @@ public class EventListItem {
 
     public int getEventColor() {
         return eventColor;
+    }
+
+    public String getCourse() {
+        return course;
     }
 }
